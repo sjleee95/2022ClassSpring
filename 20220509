@@ -1,129 +1,16 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "name": "Untitled3.ipynb",
-      "provenance": [],
-      "authorship_tag": "ABX9TyO+vKvfaKXyiY0mefQZjrLR",
-      "include_colab_link": true
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "markdown",
-      "metadata": {
-        "id": "view-in-github",
-        "colab_type": "text"
-      },
-      "source": [
-        "<a href=\"https://colab.research.google.com/github/sjleee95/2022ClassSpring/blob/main/20220509\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 2,
-      "metadata": {
-        "id": "zvMIqiIla7z0"
-      },
-      "outputs": [],
-      "source": [
-        "import nltk"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "import re"
-      ],
-      "metadata": {
-        "id": "-nbZVsnfa8gR"
-      },
-      "execution_count": 3,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "import os\n",
-        "url = \"https://raw.githubusercontent.com/hsnam95/my/main/friends_season01_script.txt\"\n",
-        "os.system(\"curl \" + url + \" > friends_season01_script.txt\")"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "unpCOQMAbx4W",
-        "outputId": "71d71265-58c0-4732-c0a4-475dffd28e9a"
-      },
-      "execution_count": 4,
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "data": {
-            "text/plain": [
-              "0"
-            ]
-          },
-          "metadata": {},
-          "execution_count": 4
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "file = open(\"friends_season01_script.txt\")\n",
-        "text = file.read()\n",
-        "file.close()"
-      ],
-      "metadata": {
-        "id": "5MW5Uhptb-G5"
-      },
-      "execution_count": 5,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "text = re.sub('Ross', '2015130781', text)"
-      ],
-      "metadata": {
-        "id": "F6G3UubIcB-b"
-      },
-      "execution_count": 8,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "file = open(\"20220509.txt\", \"w\")\n",
-        "file.write(text)\n",
-        "file.close()"
-      ],
-      "metadata": {
-        "id": "ns_nRElicQlS"
-      },
-      "execution_count": 7,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        ""
-      ],
-      "metadata": {
-        "id": "r6UUVWSJcWRS"
-      },
-      "execution_count": null,
-      "outputs": []
-    }
-  ]
-}
+import nltk
+import re
+import os
+
+url = "https://raw.githubusercontent.com/hsnam95/my/main/friends_season01_script.txt"
+os.system("curl " + url + " > friends_season01_script.txt")
+
+file = open("friends_season01_script.txt")
+text = file.read()
+file.close()
+
+text = re.sub('Ross', '2015130781', text)
+
+file = open("20220509.txt", "w")
+file.write(text)
+file.close()
